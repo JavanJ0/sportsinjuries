@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Physiotherapy Basics — Home</title>
+  <meta name="description" content="A small educational physiotherapy website: warm-up, rehab, prevention, and about." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.08);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.68);
+      --line:rgba(255,255,255,0.12);
+      --shadow:0 18px 50px rgba(0,0,0,0.35);
+      --r:18px;
+      --r2:24px;
+      --max:1040px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(88,101,242,0.35), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(56,189,248,0.22), transparent 55%),
+        radial-gradient(1000px 700px at 40% 120%, rgba(34,197,94,0.18), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+        height: 100dvh;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width:var(--max); margin:0 auto; padding:0 20px; 
+    height: 100%; display: flex; flex-direction: column; justify-content: space-between;}
+
+
+
+    /* Hero */
+    .hero{
+      padding:56px 0 18px;
+      
+    
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--r2);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  height: 100%;
+  min-height: 500px;
+  padding-bottom: 40px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(11,18,32,0.3),
+      rgba(11,18,32,0.85)
+    ),
+    url("./images/athletes.jpg") center / cover no-repeat;
+}
+
+
+    h1{
+      margin:0 0 10px 0;
+      font-size:46px;
+      line-height:1.05;
+      letter-spacing:-0.6px;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+      max-width:70ch;
+    }
+    .hero-actions{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.06);
+      color:var(--text);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{
+      background:rgba(255,255,255,0.10);
+      border-color:rgba(255,255,255,0.18);
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(56,189,248,0.95), rgba(88,101,242,0.95));
+      border-color: rgba(255,255,255,0.18);
+    }
+    .btn-primary:hover{ filter:brightness(1.03); }
+
+    /* Icon menu */
+    .jump{
+      padding:14px 0 40px;
+      
+    }
+    .jump-bar{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:12px;
+    }
+    .jump-item{
+      padding:14px 14px;
+      border-radius:var(--r2);
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.05);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      min-height:78px;
+    }
+    .jump-item:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.075);
+      border-color: rgba(255,255,255,0.16);
+    }
+    .jump-ico{
+      width:40px; height:40px;
+      border-radius:14px;
+      background: rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.12);
+      display:flex; align-items:center; justify-content:center;
+      font-size:18px;
+      flex: 0 0 auto;
+    }
+    .jump-text b{
+      display:block;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+    .jump-text span{
+      display:block;
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    /* Footer (tiny) */
+    footer{
+      padding:18px 0 34px;
+      color:var(--muted);
+      font-size:12.5px;
+      border-top:1px solid rgba(255,255,255,0.10);
+    }
+
+    @media (max-width: 900px){
+      h1{ font-size:36px; }
+      .navlinks{ display:none; } /* keep brand only on small screens */
+      .jump-bar{ grid-template-columns: 1fr; }
+      .hero-card{ padding:22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card hero-card">
+        <h1>Move better. Prevent injuries.</h1>
+        <p class="lead">
+          A small educational project about warm-up routines, rehab exercises, and injury prevention.
+        </p>
+      </div>
+    </section>
+
+    <!-- ICON NAVIGATION -->
+    <section id="jump" class="jump" aria-label="Main navigation">
+      <div class="jump-bar">
+
+        <a class="jump-item" href="./index.html" aria-label="Home page">
+          <div class="jump-ico" aria-hidden="true">🏠</div>
+          <div class="jump-text">
+            <b>Home</b>
+            <span>Main page.</span>
+          </div>
+        </a>
+
+        <a class="jump-item" href="./warmup.html" aria-label="Warm-Up page">
+          <div class="jump-ico" aria-hidden="true">🔥</div>
+          <div class="jump-text">
+            <b>Warm-Up</b>
+            <span>Short routines by body area.</span>
+          </div>
+        </a>
+
+        <a class="jump-item" href="./rehab.html" aria-label="Rehab page">
+          <div class="jump-ico" aria-hidden="true">🩹</div>
+          <div class="jump-text">
+            <b>Rehab</b>
+            <span>Gentle exercises after injuries.</span>
+          </div>
+        </a>
+        
+
+        <a class="jump-item" href="./prevention.html" aria-label="Prevention page">
+          <div class="jump-ico" aria-hidden="true">🛡️</div>
+          <div class="jump-text">
+            <b>Prevention</b>
+            <span>Tips and common mistakes.</span>
+          </div>
+        </a>
+
+        <a class="jump-item" href="./about.html" aria-label="About page">
+          <div class="jump-ico" aria-hidden="true">👤</div>
+          <div class="jump-text">
+            <b>About</b>
+            <span>About this project.</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Physiotherapy Basics — Personal project.
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
